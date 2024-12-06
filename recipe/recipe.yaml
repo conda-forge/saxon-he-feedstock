@@ -1,6 +1,7 @@
 context:
   version: "12.5"
   name: "saxon-he"
+  build: 2
 
 package:
   name: ${{ name }}
@@ -11,8 +12,10 @@ source:
   sha256: 35a46728792bd4cec2fc262d48777b4c79b5cdeef03d2981e3a64ecb3a19f716
 
 build:
-  number: 1
+  number: ${{ build }}
   noarch: generic
+  # NOTE: Platform-specific build hasn't been implemented yet in rattler-build (https://github.com/prefix-dev/rattler-build/issues/1073)
+  string: h${{ hash }}_${{ "win" if win else "unix" }}_${{ build }}
 
 requirements:
   run:
