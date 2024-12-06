@@ -1,22 +1,22 @@
 setlocal EnableDelayedExpansion
 
-set "INSTALL_DIR"=%PREFIX%\Library\lib\SaxonHE"
+set INSTALL_DIR=%PREFIX%\Library\lib\SaxonHE
 
 :: Install built files
 mkdir %INSTALL_DIR%
-XCOPY saxon-he-*.jar %INSTALL_DIR% /s /i /y
+move saxon-he-*.jar %INSTALL_DIR%
 if errorlevel 1 exit 1
 
 mkdir %INSTALL_DIR%\lib
-XCOPY lib\* %INSTALL_DIR%\lib /s /i /y
+move lib\* %INSTALL_DIR%\lib
 if errorlevel 1 exit 1
 
 mkdir %INSTALL_DIR%\doc
-XCOPY doc\* %INSTALL_DIR%\doc /s /i /y
+move doc\* %INSTALL_DIR%\doc
 if errorlevel 1 exit 1
 
 mkdir %INSTALL_DIR%\notices
-XCOPY notices\* %INSTALL_DIR%\notices /s /i /y
+move notices\* %INSTALL_DIR%\notices
 if errorlevel 1 exit 1
 
 :: Copy the [de]activate scripts to %PREFIX%\etc\conda\[de]activate.d.
