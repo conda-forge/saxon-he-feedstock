@@ -13,6 +13,9 @@ if defined CLASSPATH (
   set CLASSPATH=
 )
 
+setlocal enabledelayedexpansion
+
 for %%j in (%SaxonHE_HOME%\*.jar) do (
-  set CLASSPATH=%%j;%CLASSPATH%
+  set CLASSPATH=%%j;!CLASSPATH!
 )
+endlocal & set CLASSPATH=%CLASSPATH%
