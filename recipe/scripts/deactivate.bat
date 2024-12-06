@@ -13,6 +13,6 @@
 :: after installing openjdk for the first time.
 
 if defined CLASSPATH_CONDA_BACKUP (
-    set "CLASSPATH=%CLASSPATH_CONDA_BACKUP%"
-    set "CLASSPATH_CONDA_BACKUP="
+    set CLASSPATH=%CLASSPATH_CONDA_BACKUP%
+    set CLASSPATH_CONDA_BACKUP=
 )

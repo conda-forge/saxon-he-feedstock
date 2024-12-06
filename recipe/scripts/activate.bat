@@ -5,14 +5,14 @@
 :: The deactivate script restores the backed up variables.
 
 :: The CLASSPATH is set to the location of the jar files.
-set "SaxonHE_HOME=%CONDA_PREFIX%\lib\SaxonHE"
+set SaxonHE_HOME=%CONDA_PREFIX%\Library\lib\SaxonHE
 
 if defined CLASSPATH (
-  set "CLASSPATH_CONDA_BACKUP=%CLASSPATH%"
+  set CLASSPATH_CONDA_BACKUP=%CLASSPATH%
 ) else (
-  set "CLASSPATH="
+  set CLASSPATH=
 )
 
 for %%j in (%SaxonHE_HOME%\*.jar) do (
-  set "CLASSPATH=%%j;%CLASSPATH%"
+  set CLASSPATH=%%j;%CLASSPATH%
 )
