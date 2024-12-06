@@ -1,6 +1,6 @@
 setlocal EnableDelayedExpansion
 
-set "INSTALL_DIR"=%LIBRARY_PREFIX%\lib\SaxonHE"
+set "INSTALL_DIR"=%PREFIX%\Library\lib\SaxonHE"
 
 :: Install built files
 mkdir %INSTALL_DIR%
