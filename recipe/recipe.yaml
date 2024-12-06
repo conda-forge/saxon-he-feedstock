@@ -12,7 +12,7 @@ source:
 
 build:
   number: 1
-  noarch: python
+  noarch: generic
 
 requirements:
   run:
