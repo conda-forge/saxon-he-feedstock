@@ -11,11 +11,16 @@ source:
   sha256: 35a46728792bd4cec2fc262d48777b4c79b5cdeef03d2981e3a64ecb3a19f716
 
 build:
-  number: 0
+  number: 1
+  noarch: generic
 
 requirements:
   run:
     - openjdk
+    - if: unix
+      then: __unix
+    - if: win
+      then: __win
 
 tests:
   - package_contents:

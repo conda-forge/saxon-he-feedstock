@@ -1,9 +1,9 @@
-@echo off
+setlocal EnableDelayedExpansion
 
-set INSTALL_DIR=%LIBRARY_LIB%\SaxonHE
+set INSTALL_DIR=%PREFIX%\Library\lib\SaxonHE
+
+:: Install built files
 mkdir %INSTALL_DIR%
-
-rem Install built files
 move saxon-he-*.jar %INSTALL_DIR%
 if errorlevel 1 exit 1
 
