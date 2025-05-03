@@ -34,10 +34,10 @@ tests:
         - ${{ "Library/" if win }}lib/SaxonHE/lib/*.jar
 
   - script:
-    - if: unix
-      then: java -cp ${CLASSPATH} net.sf.saxon.Transform -?
-    - if: win
-      then: java -cp %CLASSPATH% net.sf.saxon.Transform -?
+      - if: unix
+        then: java -cp ${CLASSPATH} net.sf.saxon.Transform -?
+      - if: win
+        then: java -cp %CLASSPATH% net.sf.saxon.Transform -?
 
 about:
   homepage: http://saxon.sourceforge.net
