@@ -1,3 +1,4 @@
+bot: {automerge: true}
 conda_install_tool: pixi
 conda_build_tool: rattler-build
 github:

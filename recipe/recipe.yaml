@@ -1,7 +1,7 @@
 context:
-  version: "12.5"
+  version: "12.6"
   name: "saxon-he"
-  build: 3
+  build: 0
 
 package:
   name: ${{ name }}
@@ -9,13 +9,11 @@ package:
 
 source:
   url: https://github.com/Saxonica/Saxon-HE/releases/download/SaxonHE${{ version | split(".") | join("-") }}/SaxonHE${{ version | split(".") | join("-") }}J.zip
-  sha256: 35a46728792bd4cec2fc262d48777b4c79b5cdeef03d2981e3a64ecb3a19f716
+  sha256: cbb6657da061c155476ad9e43a3564a4cc928d4951ebeed2eafe5a0aa74e2aee
 
 build:
   number: ${{ build }}
   noarch: generic
-  # NOTE: Platform-specific build hasn't been implemented yet in rattler-build (https://github.com/prefix-dev/rattler-build/issues/1073)
-  string: h${{ hash }}_${{ "win" if win else "unix" }}_${{ build }}
 
 requirements:
   run:
@@ -36,10 +34,10 @@ tests:
         - ${{ "Library/" if win }}lib/SaxonHE/lib/*.jar
 
   - script:
-    - if: unix
-      then: java -cp ${CLASSPATH} net.sf.saxon.Transform -?
-    - if: win
-      then: java -cp %CLASSPATH% net.sf.saxon.Transform -?
+      - if: unix
+        then: java -cp ${CLASSPATH} net.sf.saxon.Transform -?
+      - if: win
+        then: java -cp %CLASSPATH% net.sf.saxon.Transform -?
 
 about:
   homepage: http://saxon.sourceforge.net
