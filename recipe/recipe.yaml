@@ -1,5 +1,5 @@
 context:
-  version: "12.6"
+  version: "12-7"
   name: "saxon-he"
   build: 0
 
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://github.com/Saxonica/Saxon-HE/releases/download/SaxonHE${{ version | split(".") | join("-") }}/SaxonHE${{ version | split(".") | join("-") }}J.zip
-  sha256: cbb6657da061c155476ad9e43a3564a4cc928d4951ebeed2eafe5a0aa74e2aee
+  sha256: f89e2085ac357d9b6cb8a231707aebc5f7f6d0b4ec3a626144ba9656f7592cde
 
 build:
   number: ${{ build }}
