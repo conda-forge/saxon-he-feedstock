@@ -1,5 +1,5 @@
 context:
-  version: "12-7"
+  version: "12.7"
   name: "saxon-he"
   build: 0
 
