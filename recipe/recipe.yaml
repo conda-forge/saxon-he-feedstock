@@ -1,14 +1,14 @@
 context:
-  version: "12.7"
+  version: "12-7"
   name: "saxon-he"
-  build: 0
+  build: 1
 
 package:
   name: ${{ name }}
-  version: ${{ version }}
+  version: ${{ version | split("-") | join(".") }}
 
 source:
-  url: https://github.com/Saxonica/Saxon-HE/releases/download/SaxonHE${{ version | split(".") | join("-") }}/SaxonHE${{ version | split(".") | join("-") }}J.zip
+  url: https://github.com/Saxonica/Saxon-HE/releases/download/SaxonHE${{ version }}/SaxonHE${{ version }}J.zip
   sha256: f89e2085ac357d9b6cb8a231707aebc5f7f6d0b4ec3a626144ba9656f7592cde
 
 build:
